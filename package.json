@@ -1,0 +1,30 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "Unit 13 Assinment - Node Express Handlebars",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkarulas/burger.git"
+  },
+  "keywords": [
+    "burger",
+    "Node",
+    "Express",
+    "Handlebars"
+  ],
+  "author": "Brad Karulas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bkarulas/burger/issues"
+  },
+  "homepage": "https://github.com/bkarulas/burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1"
+  }
+}
