@@ -1,32 +1,39 @@
-<h1>Burgers!</h1>
-<img src="../public/assets/images/burger.png" alt="Bugers">
+<h1>Eat-Da-Burger!</h1>
 
-<h2>burgers that are not devoured!</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devourIt=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>burgers that are devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-        {{burger_name}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">burger Name:</label>
-    <input type="text" id="ca" burger_name="burger_name">
+<div class="row">
+  <div class="col-6">
+    {{#each burgers}}
+      {{#unless this.devoured}}
+        <div>
+          <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+            <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
+          </form>
+        </div>
+      {{/unless}}
+    {{/each}}
   </div>
-  <button type="submit">Add burger</button>
-</form>
+
+  <div class="col-6">
+    {{#each burgers}}
+      {{#if this.devoured}}
+        <div class='burgerEaten'>
+          <div>
+            {{this.burger_name}}
+          </div>
+        </div>
+      {{/if}}
+    {{/each}}
+  </div>
+</div>
+
+
+
+<h2>Add A Burger Option</h2>
+
+<div class="row">
+    <form action="/burgers" method="POST">
+      <input type="text" id="name" name="burger_name" placeholder="Uber Delicious Burger">
+      <button type="submit" class="addBurgerButton">Add The Burger</button>
+    </form>
+</div>
