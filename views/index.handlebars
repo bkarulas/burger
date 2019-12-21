@@ -1,8 +1,7 @@
-<h1>Eat-Da-Burger!</h1>
-
-
 <div class="row">
   <div class="col-6">
+    <h3>Devourer a Burger</h3>
+    <h6>Click on the burger you want to devourer</h6>
     {{#each burgers}}
       {{#unless this.devoured}}
         <div>
@@ -13,8 +12,10 @@
       {{/unless}}
     {{/each}}
   </div>
-
+  
   <div class="col-6">
+    <h3>Burgers you Devourer</h3>
+    <h6>List of burgers that you have devourered</h6>
     {{#each burgers}}
       {{#if this.devoured}}
         <div class='burgerEaten'>
