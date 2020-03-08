@@ -1,40 +1,69 @@
-<div class="row">
+<div class="container text-center mt-5">
+<h1>Eat-Da-Burger!</h1>
+<br>
+<img src="/assets/img/burger.png" class="img-fluid" alt="Burger">
+<div class="row mx-auto">
   <div class="col-6">
-    <h3>Devourer a Burger</h3>
-    <h6>Click on the burger you want to devourer</h6>
-    {{#each burgers}}
-      {{#unless this.devoured}}
-        <div>
-          <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
-            <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
-          </form>
-        </div>
-      {{/unless}}
-    {{/each}}
+<h2>Burgers that Need to be DEVOURED!</h2>
+<div class="card uneaten mt-3 mb-2">
+  <div class="card-body">
+    <ul>
+   {{#each burgers}}
+    {{#unless this.devoured}}
+   
+  <p>
+   <h5>
+      {{this.id}}. 
+      {{this.burger_name}}
+    </h5>
+      <form action="burgers/update/{{this.id}}?_method=PUT" method"POST">
+      <input type="hidden" name="devoured" value="false">
+      <button data-burgerid="{{this.id}}" class="devburger">Devour!</button>
+
+      </form>
+      </p>
+      
+    {{/unless}}
+  {{/each}}
+</ul>
   </div>
-  
-  <div class="col-6">
-    <h3>Burgers you Devourer</h3>
-    <h6>List of burgers that you have devourered</h6>
-    {{#each burgers}}
-      {{#if this.devoured}}
-        <div class='burgerEaten'>
-          <div>
-            {{this.burger_name}}
-          </div>
-        </div>
-      {{/if}}
-    {{/each}}
+</div>
+</div>
+
+<div class="col-6">
+<h2>Burgers that have been DEVOURED!</h2>
+<div class="card eaten mt-3 mb-2">
+  <div class="card-body">
+    <ul>
+   {{#each burgers}}
+   
+  <p>
+    {{#if devoured}}
+    <h5>
+      {{this.id}}. 
+      {{this.burger_name}}
+    </h5>
+      </p>
+    {{/if}}
+  {{/each}}
+</ul>
   </div>
+</div>
+</div>
 </div>
 
 
-
-<h2>Add A Burger Option</h2>
-
-<div class="row">
-    <form action="/burgers" method="POST">
-      <input type="text" id="name" name="burger_name" placeholder="Uber Delicious Burger">
-      <button type="submit" class="addBurgerButton">Add The Burger</button>
-    </form>
+<div class = "row">
+<div class="col-12 mx-auto">
+<div class="burgeraddDiv mt-3 mb-5">
+<h2>Add a Burger:</h2>
+<p id="instructions">Enter a burger you want to eat, then click the "Submit Burger!" button</p>
+<form id="addburger" class="button-size">
+	<textarea type="text" name="burger"></textarea>
+  <br>
+	<button type="submit" class="btn btn-success">Submit Burger!</button>
+</form>
+</div>
+</div>
+</div>
 </div>
