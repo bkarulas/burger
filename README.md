@@ -1,18 +1,20 @@
 # Burger Logger
 Unit 13 assignment
 
-##Outline
+## Outline
 The Burger Logger is an application designed with MySQL, Node, Express, Handlebars and a homemade ORM. Node and MySQL was used to query and route data in the app, and Handlebars was used to generate the HTML.
 
 
-##Links
-####Github Repository:
+## Links
+
+#### Github Repository:
 * [https://github.com/bkarulas/burger](https://github.com/bkarulas/burger)
-####Applicatin Link
+
+#### Applicatin Link
 * [https://damp-shore-66568.herokuapp.com](https://damp-shore-66568.herokuapp.com/)
 
 
-##Application
+## Application
 
 ![Eat-Da-Burger](readme/main.JPG)
 
