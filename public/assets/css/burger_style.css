@@ -1,18 +1,39 @@
-body {
+body{ 
+  background-image: url(../img/ffpaper.jpeg);
+}
+.main {
   background-color: #ffd200;
+  border: 2px solid #000000;
+  width: 80%;
+  margin: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+img{
+  filter: drop-shadow(0 0 0.75rem #000000);
+}
+
+h1, h2{
+  font-family: 'Baloo Bhai', cursive;
+  color: red;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 blue;
+}
+
+#instructions{
+  font-family: 'Baloo Bhai', cursive;
+  color: blue;
 }
 
 h1{
-  font-family: 'Baloo Bhai', cursive;
-  color: blue;
+  font-weight: bolder;
 }
 
-h2 {
-  font-family: 'Baloo Bhai', cursive;
-  color: blue;
+.number{
+  text-align: center;
 }
 
-#instructions {
-  font-family: 'Baloo Bhai', cursive;
-  color: blue;
+.burger{
+  text-align: left;
 }
